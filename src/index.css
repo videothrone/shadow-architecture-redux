@@ -1,0 +1,76 @@
+/* Components */
+@import url("./css/helpers.css");
+@import url("./css/fonts.css");
+@import url("./css/header.css");
+
+/* Colors */
+:root {
+  --color-black: #1a171b;
+  --color-white: #fff;
+  --color-nude: #bb7c66;
+  --color-pink: #d26483;
+
+  --border-radius: 16px;
+
+  --box-shadow-size: 24px;
+  --box-shadow: 0 0 var(--box-shadow-size) rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 0 var(--box-shadow-size) rgba(255, 255, 255, 1);
+
+  --font-family--primary: "Arvo", serif;
+
+  --padding-global-desktop: 80px;
+  --padding-global-mobile: 20px;
+
+  --transition-duration: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-attachment: fixed;
+  background-image: url("img/bg.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  font-family: var(--font-family--primary);
+  font-size: 1.6rem;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+  padding-left: var(--padding-global-mobile);
+  padding-right: var(--padding-global-mobile);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-left: var(--padding-global-desktop);
+    padding-right: var(--padding-global-desktop);
+  }
+}
+
+a {
+  color: var(--color-nude);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-pink);
+}
+
+h1,
+.h1 {
+  color: var(--color-nude);
+  font-family: "UnifrakturCook", cursive;
+  font-size: 6vw;
+  margin: 1.5rem 0;
+  text-align: center;
+}
