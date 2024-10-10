@@ -1,0 +1,10 @@
+.map {
+  border: solid 0.2rem var(--color-nude);
+  max-width: 100vw;
+}
+
+@media (min-width: 768px) {
+  .map {
+    border: solid 0.5rem var(--color-nude);
+  }
+}
