@@ -1,5 +1,10 @@
-import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
-import { useCallback } from "react";
+import {
+  GoogleMap,
+  useJsApiLoader,
+  MarkerF,
+  InfoWindow,
+} from "@react-google-maps/api";
+import { useCallback, useState } from "react";
 import markersData from "../assets/data/markers.json";
 import mapStyles from "../assets/map-styles.js";
 import { Place } from "../types/types.js";
@@ -22,11 +27,7 @@ export default function Map() {
     libraries: ["places"],
   });
 
-  /*   const onLoad = useCallback(function callback(map: google.maps.Map) {
-    console.log("Map loaded:", map);
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
-  }, []); */
+  const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
 
   const onLoad = useCallback(function callback(map: google.maps.Map) {
     const bounds = new window.google.maps.LatLngBounds(center);
@@ -44,6 +45,14 @@ export default function Map() {
     styles: mapStyles,
     disableDefaultUI: true,
     zoomControl: true,
+  };
+
+  const handleMarkerClick = (place: Place) => {
+    setSelectedPlace(place);
+  };
+
+  const handleInfoWindowClose = () => {
+    setSelectedPlace(null);
   };
 
   return isLoaded ? (
@@ -68,8 +77,23 @@ export default function Map() {
                 url: "/img/marker-brown.png",
                 scaledSize: new window.google.maps.Size(75, 75),
               }}
+              onClick={() => handleMarkerClick(place)}
             />
           ))}
+
+        {selectedPlace && (
+          <InfoWindow
+            position={{
+              lat: selectedPlace.coordinates[0] || 0,
+              lng: selectedPlace.coordinates[1] || 0,
+            }}
+            onCloseClick={handleInfoWindowClose}
+          >
+            <div>
+              <h2>{selectedPlace.properties.NAME}</h2>
+            </div>
+          </InfoWindow>
+        )}
       </GoogleMap>
     </div>
   ) : (
