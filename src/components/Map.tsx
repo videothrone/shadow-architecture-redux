@@ -2,22 +2,7 @@ import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 import { useCallback } from "react";
 import markersData from "../assets/data/markers.json";
 import mapStyles from "../assets/map-styles.js";
-
-type PlaceProperties = {
-  PLACE_ID: number;
-  NAME: string;
-  SHORT_NAME: string;
-  DESCRIPTION: string;
-  ADDRESS: string;
-  FULL_DESCRIPTION: string;
-  IMAGEURL: string;
-  DIRECTION: string;
-};
-
-type Place = {
-  properties: PlaceProperties;
-  coordinates: number[];
-};
+import { Place } from "../types/types.js";
 
 const containerStyle = {
   width: "100%",
