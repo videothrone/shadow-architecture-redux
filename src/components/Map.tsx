@@ -20,7 +20,7 @@ type Place = {
 };
 
 const containerStyle = {
-  width: "800px",
+  width: "100%",
   height: "600px",
 };
 
