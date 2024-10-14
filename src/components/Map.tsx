@@ -2,12 +2,13 @@ import {
   GoogleMap,
   useJsApiLoader,
   MarkerF,
-  InfoWindow,
+  InfoWindowF,
 } from "@react-google-maps/api";
 import { useCallback, useState } from "react";
 import markersData from "../assets/data/markers.json";
 import mapStyles from "../assets/map-styles.js";
 import { Place } from "../types/types.js";
+import InfoWindowContent from "./InfoWindowContent";
 
 const containerStyle = {
   width: "100%",
@@ -24,7 +25,6 @@ export default function Map() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: googleMapsApiKey,
-    libraries: ["places"],
   });
 
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
@@ -82,17 +82,15 @@ export default function Map() {
           ))}
 
         {selectedPlace && (
-          <InfoWindow
+          <InfoWindowF
             position={{
               lat: selectedPlace.coordinates[0] || 0,
               lng: selectedPlace.coordinates[1] || 0,
             }}
             onCloseClick={handleInfoWindowClose}
           >
-            <div>
-              <h2>{selectedPlace.properties.NAME}</h2>
-            </div>
-          </InfoWindow>
+            <InfoWindowContent place={selectedPlace} />
+          </InfoWindowF>
         )}
       </GoogleMap>
     </div>
