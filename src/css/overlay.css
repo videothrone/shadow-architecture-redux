@@ -51,7 +51,7 @@
   margin-bottom: 15px;
 }
 
-#x {
+.close-button {
   font-family: "UnifrakturCook", cursive;
   text-decoration: none;
   color: #bb7c66;
@@ -61,15 +61,16 @@
   margin-left: 91%;
 }
 
-#x:hover {
-  color: white;
+.close-button:hover,
+.close-button:focus-visible {
+  color: var(--color-white);
 }
 
 #overlay-address {
-  color: white;
+  align-items: center;
+  color: var(--color-white);
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .disable-scrollbars::-webkit-scrollbar {
