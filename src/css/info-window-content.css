@@ -1,19 +1,15 @@
 .info-window {
   display: flex;
   flex-direction: column;
-  font-family: "Arvo", serif;
-  font-size: 1.6rem;
+  font-family: var(--font-family--primary);
+  font-size: var(--font-size--default);
   gap: 1rem;
   margin-left: 0.8rem;
   width: 30rem;
 }
 
-.info-window__link {
-  text-decoration: none;
-}
-
 .info-window__headline {
-  color: var(----color-nude);
+  color: var(--color-nude);
 }
 
 .info-window__image {
@@ -22,40 +18,15 @@
   width: 30rem;
 }
 
-.info-window__address {
+.info-window__route {
   align-items: center;
-  color: var(----color-grey);
+  color: var(--color-grey);
   display: flex;
   margin-top: 1.5rem;
 }
 
-#overlay-icon img {
-  width: 30px;
-  height: 30px;
-  margin-left: 5px;
-}
-
-#overlay-icon-marker img {
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-}
-
-.route {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  display: inline-block;
-}
-
-.route .icon-top {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 666;
-}
-
-.route:hover .icon-top {
-  display: inline;
+.info-window__route .icon {
+  height: 2rem;
+  margin-left: 1rem;
+  width: 2rem;
 }
