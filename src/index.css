@@ -7,6 +7,7 @@
 @import url("./css/cards.css");
 @import url("./css/card.css");
 @import url("./css/overlay.css");
+@import url("./css/route.css");
 
 /* Colors */
 :root {
@@ -16,16 +17,18 @@
   --color-pink: #d26483;
   --color-grey: darkgrey;
 
-  --border-radius: 16px;
+  --border-radius: 1.6rem;
 
-  --box-shadow-size: 24px;
+  --box-shadow-size: 2.4rem;
   --box-shadow: 0 0 var(--box-shadow-size) rgba(0, 0, 0, 0.1);
   --box-shadow-hover: 0 0 var(--box-shadow-size) rgba(255, 255, 255, 1);
 
   --font-family--primary: "Arvo", serif;
+  --font-family--secondary: "UnifrakturCook", cursive;
+  --font-size--default: 1.6rem;
 
-  --padding-global-desktop: 80px;
-  --padding-global-mobile: 20px;
+  --padding-global-desktop: 8rem;
+  --padding-global-mobile: 2rem;
 
   --transition-duration: 0.3s;
 }

@@ -1,0 +1,20 @@
+.route__link-container {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.route__link-container .icon-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 666;
+}
+
+.route__link-container:hover .icon-top,
+.route__link-container:focus-visible .icon-top {
+  display: inline;
+}
