@@ -1,84 +1,79 @@
-#marker-overlay {
+.overlay {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 0;
+  color: var(--color-black);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow: auto;
-  position: fixed;
-  top: 0;
+  font-family: var(--font-family--primary);
+  font-size: 2rem;
   left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 999999;
-  color: black;
-  font-family: "Arvo", serif;
-  font-size: 20px;
+  overflow: auto;
   padding: 3%;
+  position: fixed;
+  right: 0;
   text-align: center;
+  top: 0;
+  z-index: 999999;
 }
 
-#marker-overlay h2 {
-  color: white;
-  margin: 0;
-  font-family: "UnifrakturCook", cursive;
+.overlay__headline {
+  color: var(--color-white);
+  font-family: var(--font-family--secondary);
   font-size: 5vw;
-  padding: 10px;
+  margin: 0;
+  padding: 1rem;
 }
 
-#marker-overlay img {
-  height: 55vh;
-  width: 90vw;
-  object-fit: cover;
+.overlay__image {
   cursor: pointer;
-  transition: 0.5s;
-}
-
-#marker-overlay img.extended {
-  height: 100vh;
-  width: 90vw;
+  height: 55vh;
   object-fit: cover;
-  z-index: 666;
   transition: 0.5s;
+  width: 90vw;
 }
 
-#marker-overlay-content-container {
+.overlay__image.overlay__image--extended {
+  height: 100vh;
+  object-fit: cover;
+  transition: 0.5s;
+  width: 90vw;
+  z-index: 666;
+}
+
+.overlay__content {
   background-color: rgba(187, 124, 102, 0.8);
 }
 
-#full-description {
-  margin-top: 15px;
-  padding: 1.5vw;
-  margin-bottom: 15px;
-}
-
-.close-button {
-  font-family: "UnifrakturCook", cursive;
-  text-decoration: none;
-  color: #bb7c66;
+.overlay__content-close-button {
+  color: var(--color-nude);
   cursor: pointer;
+  font-family: var(--font-family--secondary);
   font-size: 3vw;
-  position: absolute;
   margin-left: 91%;
+  position: absolute;
+  text-decoration: none;
 }
 
-.close-button:hover,
-.close-button:focus-visible {
+.overlay__content-close-button:hover,
+.overlay__content-close-button:focus-visible {
   color: var(--color-white);
 }
 
-#overlay-address {
+.overlay__route {
   align-items: center;
   color: var(--color-white);
   display: flex;
   justify-content: center;
 }
 
-.disable-scrollbars::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* Chrome/Safari/Webkit */
+.overlay__route .icon {
+  height: 3rem;
+  margin-left: 0.5rem;
+  width: 3rem;
 }
 
-.disable-scrollbars {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+.overlay__content-description {
+  margin: 1.5rem 0;
+  padding: 1.5vw;
 }

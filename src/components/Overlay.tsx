@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Place } from "../types/types";
+import Route from "./Route";
 
-type Props = {
+type OverlayProps = {
   selectedPlace: Place;
   setOverlayIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
   overlayIsVisible: boolean;
@@ -10,7 +11,7 @@ export default function Overlay({
   selectedPlace,
   setOverlayIsVisible,
   overlayIsVisible,
-}: Props) {
+}: OverlayProps) {
   const [extendedImage, setExtendedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -32,44 +33,31 @@ export default function Overlay({
   return (
     <>
       {overlayIsVisible && (
-        <div id="marker-overlay" className="disable-scrollbars">
-          <div id="marker-overlay-content-container">
+        <div className="overlay disable-scrollbars">
+          <div className="overlay__content">
             <div
-              className="close-button"
+              className="overlay__content-close-button"
               onClick={() => setOverlayIsVisible(false)}
             >
               X
             </div>
-            <h2>{selectedPlace.properties.NAME}</h2>
+            <h2 className="overlay__headline">
+              {selectedPlace.properties.NAME}
+            </h2>
             <div
               onClick={
                 extendedImage == null
-                  ? () => setExtendedImage("extended")
+                  ? () => setExtendedImage("overlay__image--extended")
                   : () => setExtendedImage(null)
               }
             >
               <img
                 src={selectedPlace.properties.IMAGEURL}
-                className={extendedImage ?? ""}
+                className={`overlay__image ${extendedImage ?? ""}`}
               />
             </div>
-            <div id="overlay-address">
-              {selectedPlace.properties.ADDRESS} |{" "}
-              <div className="route-marker" id="overlay-icon">
-                <a
-                  href={selectedPlace.properties.DIRECTION}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  <img src="/img/icon-black.png" alt="Click for maps route" />
-                  <img
-                    src="/img/icon-white.png"
-                    className="overlay-icon icon-top"
-                  />
-                </a>
-              </div>
-            </div>
-            <div id="full-description">
+            <Route place={selectedPlace} className="overlay__route" />
+            <div className="overlay__content-description">
               {selectedPlace.properties.FULL_DESCRIPTION}
             </div>
           </div>
