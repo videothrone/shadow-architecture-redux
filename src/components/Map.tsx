@@ -9,6 +9,7 @@ import markersData from "../assets/data/markers.json";
 import mapStyles from "../assets/map-styles.js";
 import { Place } from "../types/types.js";
 import InfoWindowContent from "./InfoWindowContent";
+import Overlay from "./Overlay.js";
 
 const containerStyle = {
   width: "100%",
@@ -28,6 +29,7 @@ export default function Map() {
   });
 
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
+  const [overlayIsVisible, setOverlayIsVisible] = useState(false);
 
   const onLoad = useCallback(function callback(map: google.maps.Map) {
     const bounds = new window.google.maps.LatLngBounds(center);
@@ -53,6 +55,11 @@ export default function Map() {
 
   const handleInfoWindowClose = () => {
     setSelectedPlace(null);
+  };
+
+  const handleExploreClick = (place: Place) => {
+    setSelectedPlace(place);
+    setOverlayIsVisible(true);
   };
 
   return isLoaded ? (
@@ -89,8 +96,19 @@ export default function Map() {
             }}
             onCloseClick={handleInfoWindowClose}
           >
-            <InfoWindowContent place={selectedPlace} />
+            <InfoWindowContent
+              place={selectedPlace}
+              onClick={() => handleExploreClick(selectedPlace)}
+            />
           </InfoWindowF>
+        )}
+
+        {selectedPlace && setOverlayIsVisible && (
+          <Overlay
+            selectedPlace={selectedPlace}
+            setOverlayIsVisible={setOverlayIsVisible}
+            overlayIsVisible={overlayIsVisible}
+          />
         )}
       </GoogleMap>
     </div>

@@ -18,10 +18,23 @@
   width: 30rem;
 }
 
+.info-window__explore {
+  color: var(--color-nude);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.info-window__explore:hover,
+.info-window__explore:focus-visible {
+  color: var(--color-black);
+  font-style: italic;
+  text-decoration: none;
+}
+
 .info-window__route {
-  align-items: center;
   color: var(--color-grey);
   display: flex;
+  justify-content: space-between;
   margin-top: 1.5rem;
 }
 
@@ -29,4 +42,9 @@
   height: 2rem;
   margin-left: 1rem;
   width: 2rem;
+}
+
+// Google map overwrites
+.gm-style-iw-chr button.gm-ui-hover-effect {
+  margin-right: -1.2rem !important;
 }
