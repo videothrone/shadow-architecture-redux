@@ -1,16 +1,16 @@
 .route__link-container {
-  width: 30px;
-  height: 30px;
-  position: relative;
   display: inline-block;
+  height: 3rem;
+  position: relative;
   text-decoration: none;
+  width: 3rem;
 }
 
 .route__link-container .icon-top {
   display: none;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   z-index: 666;
 }
 
