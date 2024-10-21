@@ -78,7 +78,7 @@ a:focus-visible {
 h1,
 .h1 {
   color: var(--color-nude);
-  font-family: "UnifrakturCook", cursive;
+  font-family: var(--font-family--secondary);
   font-size: 6vw;
   margin: 1.5rem 0;
   text-align: center;

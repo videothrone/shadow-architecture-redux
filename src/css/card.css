@@ -1,11 +1,9 @@
 .card {
   background-color: black;
-  box-shadow: inset 0 0 0 5px var(--color-nude);
+  box-shadow: inset 0 0 0 0.5rem var(--color-nude);
   cursor: pointer;
-  margin: 2rem 1.5rem 1.5rem 0;
   position: relative;
   transition: 0.5s;
-  width: 35rem;
 }
 
 .card::before,
@@ -27,18 +25,9 @@
   transform: scale(1);
 }
 
-.card a {
-  text-decoration: none;
-}
-
-.card a:hover {
-  text-decoration: none;
-  color: var(--color-nude);
-}
-
 .card__headline {
   color: var(--color-white);
-  padding: 0.7rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
@@ -46,26 +35,26 @@
   height: 20rem;
   object-fit: cover;
   padding: 0 0.5rem;
-  width: 35rem;
+  width: 100%;
 }
 
 .card__description {
   color: var(--color-nude);
-  padding: 0.7rem;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.card__animation::before {
-  border-bottom: 5px solid var(--color-white);
-  border-left: 5px solid var(--color-white);
+.card--animation::before {
+  border-bottom: 0.5rem solid var(--color-white);
+  border-left: 0.5rem solid var(--color-white);
   pointer-events: none;
   transform-origin: 0 100%;
 }
 
-.card__animation::after {
-  border-right: 5px solid var(--color-white);
-  border-top: 5px solid var(--color-white);
+.card--animation::after {
+  border-right: 0.5rem solid var(--color-white);
+  border-top: 0.5rem solid var(--color-white);
   pointer-events: none;
   transform-origin: 100% 0;
 }
