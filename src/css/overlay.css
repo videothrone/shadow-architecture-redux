@@ -9,12 +9,49 @@
   font-size: 2rem;
   left: 0;
   overflow: auto;
-  padding: 3%;
   position: fixed;
   right: 0;
   text-align: center;
   top: 0;
   z-index: 999999;
+}
+
+@media (min-width: 768px) {
+  .overlay {
+    padding: 3%;
+  }
+}
+
+.overlay__content {
+  background-color: rgba(187, 124, 102, 0.8);
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .overlay__content {
+    height: auto;
+  }
+}
+
+.overlay__content-close-button {
+  color: var(--color-white);
+  cursor: pointer;
+  font-family: var(--font-family--secondary);
+  font-size: 3.4rem;
+  margin-left: 91%;
+  position: absolute;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .overlay__content-close-button {
+    font-size: 3vw;
+  }
+}
+
+.overlay__content-close-button:hover,
+.overlay__content-close-button:focus-visible {
+  color: var(--color-pink);
 }
 
 .overlay__headline {
@@ -41,25 +78,6 @@
   z-index: 666;
 }
 
-.overlay__content {
-  background-color: rgba(187, 124, 102, 0.8);
-}
-
-.overlay__content-close-button {
-  color: var(--color-nude);
-  cursor: pointer;
-  font-family: var(--font-family--secondary);
-  font-size: 3vw;
-  margin-left: 91%;
-  position: absolute;
-  text-decoration: none;
-}
-
-.overlay__content-close-button:hover,
-.overlay__content-close-button:focus-visible {
-  color: var(--color-white);
-}
-
 .overlay__route {
   align-items: center;
   color: var(--color-white);
@@ -68,6 +86,7 @@
 }
 
 .overlay__route .icon {
+  color: var(--color-black);
   height: 3rem;
   margin-left: 0.5rem;
   width: 3rem;
