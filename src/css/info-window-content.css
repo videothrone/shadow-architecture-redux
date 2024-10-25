@@ -4,8 +4,15 @@
   font-family: var(--font-family--primary);
   font-size: var(--font-size--default);
   gap: 1rem;
-  margin-left: 0.8rem;
-  width: 30rem;
+  margin-left: -1rem;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .info-window {
+    width: 35rem;
+  }
 }
 
 .info-window__headline {
@@ -14,8 +21,14 @@
 
 .info-window__image {
   height: 20rem;
-  object-fit: cover;
-  width: 30rem;
+  /* object-fit: cover; */
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .info-window {
+    width: 35rem;
+  }
 }
 
 .info-window__explore {
@@ -34,14 +47,15 @@
 .info-window__route {
   color: var(--color-grey);
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 .info-window__route .icon {
-  height: 2rem;
-  margin-left: 1rem;
-  width: 2rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+  width: 3rem;
 }
 
 // Google map overwrites
