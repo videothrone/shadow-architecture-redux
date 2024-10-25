@@ -6,15 +6,7 @@
   width: 3rem;
 }
 
-.route__link-container .icon-top {
-  display: none;
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 666;
-}
-
-.route__link-container:hover .icon-top,
-.route__link-container:focus-visible .icon-top {
-  display: inline;
+.route__link-icon:hover,
+.route__link-icon:focus-visible {
+  color: var(--color-pink);
 }

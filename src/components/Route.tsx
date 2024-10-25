@@ -1,4 +1,5 @@
 import { Place } from "../types/types";
+import { LiaMap } from "react-icons/lia";
 
 type RouteProps = {
   place: Place;
@@ -16,16 +17,7 @@ export default function Route({ place, className }: RouteProps) {
           rel="noreferrer noopener"
           className="route__link"
         >
-          <img
-            src="/img/icon-brown.png"
-            alt="Click for maps route"
-            className="icon"
-          />
-          <img
-            src="/img/icon-black.png"
-            alt="Click for maps route"
-            className="icon icon-top"
-          />
+          <LiaMap className="icon route__link-icon" />
         </a>
       </div>
     </div>
