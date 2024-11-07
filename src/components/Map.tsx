@@ -9,7 +9,8 @@ import markersData from "../assets/data/markers.json";
 import mapStyles from "../assets/map-styles.js";
 import { Place } from "../types/types.js";
 import InfoWindowContent from "./InfoWindowContent";
-import Overlay from "./Overlay.js";
+import Overlay from "./Overlay";
+import Loader from "./Loader";
 
 const containerStyle = {
   width: "100%",
@@ -113,8 +114,8 @@ export default function Map() {
       </GoogleMap>
     </div>
   ) : (
-    <>
-      <div>Couldn't load map...</div>
-    </>
+    <div className="map map--loading">
+      <Loader />
+    </div>
   );
 }
