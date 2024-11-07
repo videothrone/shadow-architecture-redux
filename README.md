@@ -54,3 +54,5 @@ npm run dev
 - CSS has been rewritten to [BEM](https://getbem.com/) standards and split into component files
 - Overlay can be closed now also by keyboard
 - Location cards are now rendered in grid taking up the same space and width as the Map component and resizing automatically to the viewport of the user
+- Better responsibility of info windows that are opened by map markers
+- Added loader animation / component to Map, instead of standard loading text
